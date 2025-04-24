@@ -1,0 +1,10 @@
+plugins {
+    id 'io.quarkus' version "3.8.2"
+}
+
+dependencies {
+    implementation enforcedPlatform("io.quarkus:quarkus-bom:3.8.2")
+    implementation 'io.quarkus:quarkus-resteasy-reactive'
+    implementation project(':application')
+    implementation project(':domain')
+}
