@@ -1,6 +1,0 @@
-rootProject.name = 'hexagonal-demo'
-
-include 'domain'
-include 'application'
-include 'adapters:springboot'
-include 'adapters:quarkus'
