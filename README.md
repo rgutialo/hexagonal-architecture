@@ -105,13 +105,4 @@ Hello, Quarkus!
 
 ---
 
-## ✅ Next Steps
-
-You could expand this project by:
-- Adding a persistence layer (JPA or JDBC)
-- Adding integration tests
-- Using Docker for consistent environment setup
-
----
-
 Made with ☕ and ❤️
