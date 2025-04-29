@@ -1,8 +1,7 @@
 # Hexagonal Architecture Demo (Spring Boot & Quarkus)
 
-This is a simple Java project demonstrating **Hexagonal Architecture (Ports & Adapters)** and how easily you can switch between frameworks like **Spring Boot** and **Quarkus**.
-
-The application exposes a simple REST API that returns a greeting message based on a name.
+This project demonstrates the **Hexagonal Architecture (Ports & Adapters)** pattern in Java, showcasing how to switch 
+between different frameworks and persistence mechanisms with minimal changes to the core application logic.
 
 ---
 
@@ -10,21 +9,41 @@ The application exposes a simple REST API that returns a greeting message based 
 
 ```
 hexagonal-demo/
-├── application/        # Use case: GetGreeting
-├── domain/             # Domain model: GreetingService
-├── infraestructure/
+├── application/        # Use cases (e.g., GetGreeting)
+├── domain/             # Domain model and interfaces (e.g., GreetingService)
+├── infrastructure/
 │   ├── springboot/     # Spring Boot REST adapter
-│   └── quarkus/        # Quarkus REST adapter
+│   ├── quarkus/        # Quarkus REST adapter
+│   ├── persistence/
+│   │   ├── jpa/        # JPA adapter implementation
+│   │   └── csv/        # CSV adapter implementation
+
 ```
 
 ---
 
 ## 📦 How It Works
 
-- **Domain Layer** defines the `GreetingService` interface.
-- **Application Layer** uses this service in a use case called `GetGreeting`.
-- **Adapters** implement the interface and expose REST endpoints.
+- **Domain Layer**: Defines the core business logic and interfaces (ports) that represent the application's required operations.
+- **Application Layer**: Implements use cases that orchestrate domain logic and interact with ports.
+- **Adapters**: Contains adapters that implement the ports using specific technologies (e.g., REST controllers, JPA repositories, CSV file handlers).
 
+---
+
+📦 Persistence Adapters Example
+This example demonstrates how to implement two different persistence adapters for the same port:
+
+1. JPA Adapter
+   Purpose: Persist data using a relational database via JPA. 
+   Implementation: Defines a JpaMultiplicationRepository that implements the MultiplicationRepository port. Uses Spring Data JPA to handle database operations.
+   Configuration: Requires a database configuration in application.properties or application.yml.
+
+2. CSV Adapter
+   Purpose: Persist data to a CSV file. 
+   Implementation: Defines a CsvMultiplicationRepository that implements the MultiplicationRepository port. Handles file creation, writes headers if the file doesn't exist, and appends new records with auto-incremented IDs.
+   Features: Checks for existing IDs to prevent duplicates. Automatically assigns a new ID based on the highest existing ID in the file.
+
+To use one or the other, just comment and uncomment the corresponding bean definition in SpringBootconfig java file.
 ---
 
 ## ▶️ Run with Spring Boot
