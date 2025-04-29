@@ -14,7 +14,7 @@ public class SpringGreetingController {
     private final GreetingService greetingService = new GreetingServiceImpl();
 
     @GetMapping
-    public String greet(@RequestParam(defaultValue = "World") String name) {
+    public String greet(@RequestParam(name="name", defaultValue = "World") String name) {
         return greetingService.greet(name);
     }
 }
