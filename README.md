@@ -30,7 +30,7 @@ hexagonal-demo/
 
 ---
 
-📦 Persistence Adapters Example
+## 📦 Persistence Adapters Example
 This example demonstrates how to implement two different persistence adapters for the same port:
 
 1. JPA Adapter
@@ -44,6 +44,7 @@ This example demonstrates how to implement two different persistence adapters fo
    Features: Checks for existing IDs to prevent duplicates. Automatically assigns a new ID based on the highest existing ID in the file.
 
 To use one or the other, just comment and uncomment the corresponding bean definition in SpringBootconfig java file.
+
 ---
 
 ## ▶️ Run with Spring Boot
