@@ -1,4 +1,4 @@
-package com.example.hexagonal.infrastructure.springboot;
+package com.example.hexagonal.infrastructure.springboot.rest;
 
 import com.example.hexagonal.domain.service.GreetingService;
 import lombok.AllArgsConstructor;
