@@ -1,6 +1,6 @@
 package com.example.hexagonal.infrastructure.quarkus;
 
-import com.example.hexagonal.application.GreetingService;
+import com.example.hexagonal.domain.service.GreetingService;
 import com.example.hexagonal.application.GreetingServiceImpl;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;

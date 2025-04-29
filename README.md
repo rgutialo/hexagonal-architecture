@@ -10,9 +10,9 @@ The application exposes a simple REST API that returns a greeting message based 
 
 ```
 hexagonal-demo/
-├── domain/             # Domain model: GreetingService
 ├── application/        # Use case: GetGreeting
-├── adapters/
+├── domain/             # Domain model: GreetingService
+├── infraestructure/
 │   ├── springboot/     # Spring Boot REST adapter
 │   └── quarkus/        # Quarkus REST adapter
 ```
@@ -38,12 +38,12 @@ mvn spring-boot:run
 2. Access the greeting endpoint:
 
 ```bash
-http://localhost:8080/spring/greet?name=SpringBoot
+curl http://localhost:8080/spring/greet?name=SpringBoot
 ```
 
 Expected output:
 ```
-Hello, John!
+Hello, SpringBoot!
 ```
 
 ---
@@ -59,12 +59,12 @@ mvn compile quarkus:dev
 2. Access the greeting endpoint:
 
 ```bash
-http://localhost:8080/quarkus/greet?name=Quarkus
+curl http://localhost:8080/quarkus/greet?name=Quarkus
 ```
 
 Expected output:
 ```
-Hello, John!
+Hello, Quarkus!
 ```
 
 ---

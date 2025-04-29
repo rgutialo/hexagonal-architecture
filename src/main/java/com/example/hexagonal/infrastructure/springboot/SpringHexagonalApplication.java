@@ -1,4 +1,4 @@
-package com.example.hexagonal.infrastructure.spring;
+package com.example.hexagonal.infrastructure.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
