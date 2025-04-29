@@ -29,22 +29,16 @@ hexagonal-demo/
 
 ## ▶️ Run with Spring Boot
 
-1. Go to the Spring Boot adapter:
+1. Run the application:
 
 ```bash
-cd adapters/springboot
+mvn spring-boot:run
 ```
 
-2. Run the application:
+2. Access the greeting endpoint:
 
 ```bash
-./gradlew bootRun
-```
-
-3. Access the greeting endpoint:
-
-```bash
-http://localhost:8080/greet?name=John
+http://localhost:8080/spring/greet?name=SpringBoot
 ```
 
 Expected output:
@@ -56,22 +50,16 @@ Hello, John!
 
 ## ▶️ Run with Quarkus
 
-1. Go to the Quarkus adapter:
+1. Run the application in dev mode:
 
 ```bash
-cd adapters/quarkus
+mvn compile quarkus:dev 
 ```
 
-2. Run the application in dev mode:
+2. Access the greeting endpoint:
 
 ```bash
-./gradlew quarkusDev
-```
-
-3. Access the greeting endpoint:
-
-```bash
-http://localhost:8080/greet?name=John
+http://localhost:8080/quarkus/greet?name=Quarkus
 ```
 
 Expected output:
@@ -91,8 +79,8 @@ Hello, John!
 
 ## 🛠 Requirements
 
-- Java 17+
-- Gradle
+- Java 21
+- Maven
 - Internet connection to fetch dependencies
 
 ---
